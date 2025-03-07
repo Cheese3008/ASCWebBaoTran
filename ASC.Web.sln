@@ -5,13 +5,15 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASC.Web", "ASC.Web\ASC.Web.csproj", "{A22D3B27-880E-4F4F-AD9F-06EED167D28B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASC.Business", "ASC.Business\ASC.Business.csproj", "{D44606F8-383F-423D-B840-36DE89467181}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASC.Business", "ASC.Business\ASC.Business.csproj", "{D44606F8-383F-423D-B840-36DE89467181}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASC.DataAccess", "ASC.DataAccess\ASC.DataAccess.csproj", "{65045CAA-E164-4AEF-88C3-B96305F50701}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASC.DataAccess", "ASC.DataAccess\ASC.DataAccess.csproj", "{65045CAA-E164-4AEF-88C3-B96305F50701}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASC.Model", "ASC.Model\ASC.Model.csproj", "{EB781A29-FFD2-4C8C-8527-8647B36237B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASC.Model", "ASC.Model\ASC.Model.csproj", "{EB781A29-FFD2-4C8C-8527-8647B36237B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASC.Utilities", "ASC.Utilities\ASC.Utilities.csproj", "{8EF494F9-C965-4423-BBB6-FFB3AEC38D49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASC.Utilities", "ASC.Utilities\ASC.Utilities.csproj", "{8EF494F9-C965-4423-BBB6-FFB3AEC38D49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASC.Tests", "ASC.Tests\ASC.Tests.csproj", "{37C52BCB-C1C6-4E4A-9261-E958921D5D49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{8EF494F9-C965-4423-BBB6-FFB3AEC38D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EF494F9-C965-4423-BBB6-FFB3AEC38D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EF494F9-C965-4423-BBB6-FFB3AEC38D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37C52BCB-C1C6-4E4A-9261-E958921D5D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37C52BCB-C1C6-4E4A-9261-E958921D5D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37C52BCB-C1C6-4E4A-9261-E958921D5D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37C52BCB-C1C6-4E4A-9261-E958921D5D49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

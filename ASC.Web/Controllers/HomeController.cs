@@ -4,14 +4,19 @@ using System.Diagnostics;
 using System.Net.NetworkInformation;
 using Microsoft.Extensions.Options;
 using ASC.Web.Configuration;
+using ASC.Utilities;
 
 namespace ASC.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController>? _logger;
 
-        private IOptions<ApplicationSettings> _settings;
+        private readonly IOptions<ApplicationSettings> _settings;
+        public HomeController(IOptions<ApplicationSettings> settings)
+        {
+            _settings = settings;
+        }
         public HomeController(ILogger<HomeController> logger, IOptions<ApplicationSettings> settings)
         {
             _logger = logger;
@@ -20,6 +25,9 @@ namespace ASC.Web.Controllers
 
         public IActionResult Index()
         {
+            // Set session
+            HttpContext.Session.SetSession("Test", _settings.Value);
+            var settings = HttpContext.Session.GetSession<ApplicationSettings>("Test");
             ViewBag.Title = _settings.Value.ApplicationTitle;
             return View();
         }
