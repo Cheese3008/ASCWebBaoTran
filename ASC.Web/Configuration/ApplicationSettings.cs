@@ -1,4 +1,5 @@
-﻿namespace ASC.Web.Configuration
+﻿
+namespace ASC.Web.Configuration
 {
     public class ApplicationSettings
     {
@@ -14,5 +15,6 @@
         public int SMTPPort { get; set; }
         public string SMTPAccount { get; set; }
         public string SMTPPassword { get; set; }
+
     }
 }
