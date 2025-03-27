@@ -1,38 +1,43 @@
-using ASC.Web.Models;
-using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using System.Net.NetworkInformation;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
-using ASC.Web.Configuration;
 using ASC.Utilities;
+using ASC.Web.Configuration;
+using ASC.Web.Models;
 
 namespace ASC.Web.Controllers
 {
     public class HomeController : AnonymousController
     {
         private readonly ILogger<HomeController>? _logger;
-
         private readonly IOptions<ApplicationSettings> _settings;
-        public HomeController(IOptions<ApplicationSettings> settings)
+
+        public HomeController(IOptions<ApplicationSettings> settings, ILogger<HomeController>? logger = null)
         {
-            _settings = settings;
-        }
-        public HomeController(ILogger<HomeController> logger, IOptions<ApplicationSettings> settings)
-        {
+            _settings = settings ?? throw new ArgumentNullException(nameof(settings));
             _logger = logger;
-            _settings = settings;
         }
 
         public IActionResult Index()
         {
-            // Set session
+            // Set Session
             HttpContext.Session.SetSession("Test", _settings.Value);
+
+            // Get Session
             var settings = HttpContext.Session.GetSession<ApplicationSettings>("Test");
+
+            // Usage of IOptions
             ViewBag.Title = _settings.Value.ApplicationTitle;
+
             return View();
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Dashboard()
         {
             return View();
         }
@@ -42,10 +47,5 @@ namespace ASC.Web.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public IActionResult Dashboard()
-        {
-            return View();
-        }
-
     }
 }
