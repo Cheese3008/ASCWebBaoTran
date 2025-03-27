@@ -3,7 +3,7 @@ using ASC.Web.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace ASCWeb.Areas.ServiceRequests.Controllers
+namespace ASC.Web.Areas.ServiceRequests.Controllers
 {
     [Area("ServiceRequests")]
     public class DashboardController : BaseController

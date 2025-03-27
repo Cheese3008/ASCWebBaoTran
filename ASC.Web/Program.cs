@@ -88,7 +88,6 @@ using (var scope = app.Services.CreateScope())
     var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
     var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     var appSettings = serviceProvider.GetRequiredService<IOptions<ApplicationSettings>>();
-
     await identitySeed.Seed(userManager, roleManager, appSettings);
 }
 
